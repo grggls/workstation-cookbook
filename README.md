@@ -19,7 +19,7 @@ The other requirement is some form of git client, although you can grab a tarbal
 ~$ git clone git@github.com:grggls/workstation-cookbook.git
 ~$ cd cookbooks
 cookbooks$ less README.md # looks like you're here already
-cookbooks$ sudo chef-solo --config solo.rb --json-attributes workstation.json --log_level info
+cookbooks$ sudo chef-client --local --config solo.rb --json-attributes workstation.json --log_level info
 ```
 
 ## Step 3
