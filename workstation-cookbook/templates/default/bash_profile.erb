@@ -1,0 +1,50 @@
+export PATH="/buzzfeed/buzzbrew/bin:$PATH"
+export PATH="/buzzfeed/perl/bin:$PATH"
+export PATH="/buzzfeed/buzzbrew/share/python:$PATH"
+
+export EDITOR="/usr/bin/vim"
+
+# specify the correct python and virtualenv binaries
+export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python"
+export VIRTUALENVWRAPPER_VIRTUALENV="/usr/local/bin/virtualenv"
+
+# load virtualenvwrapper for python (after custom PATHs)
+venvwrap="virtualenvwrapper.sh"
+/usr/bin/which -s $venvwrap
+if [ $? -eq 0 ]; then
+    venvwrap=`/usr/bin/which $venvwrap`
+    source $venvwrap
+    # make pip respect virtualenv
+    export PIP_RESPECT_VIRTUALENV=true
+    # make pip respect virtualenvwrapper
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+fi
+
+
+export PYTHONDONTWRITEBYTECODE=true
+
+keyfile=~/.ssh/id_rsa
+[[ -z $(ssh-add -L | grep $keyfile) ]] && ssh-add $keyfile
+
+# export AWS_ACCESS_KEY=AKIAJR2WSNUTF5M6DKHQ
+# export AWS_SECRET_KEY=mPVcIkcfy9nfnXdY72/viYhOU62H2SiKMSBFQ1Vv
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+complete -C aws_completer aws
+
+##
+# Your previous /Users/gregorydamiani/.bash_profile file was backed up as /Users/gregorydamiani/.bash_profile.macports-saved_2014-05-13_at_17:11:36
+##
+
+# MacPorts Installer addition on 2014-05-13_at_17:11:36: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/chefdk/bin:/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/buzzfeed/bin:$PATH"
+export PATH="/buzzfeed/local/bin:$PATH"
+export PATH=/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources:$PATH
+export CHEF=/opt/buzzfeed/chef
