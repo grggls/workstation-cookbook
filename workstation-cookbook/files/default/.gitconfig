@@ -1,0 +1,38 @@
+[user]
+	email = greg.damiani@buzzfeed.com
+	name = Greg Damiani
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+
+[alias]
+  br = branch
+  ci = commit
+  co = checkout
+  st = status
+  p = pull --rebase --ff-only
+  diff-fetch = diff ..FETCH_HEAD
+  revert-file = checkout HEAD --
+  revert-file-server = checkout FETCH_HEAD --
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --name-only
+
+[push]
+	default = simple
+
+[rerere]
+  enabled = true
+
+[credential]
+	helper = osxkeychain
+[core]
+	whitespace = space-before-tab,trailing-space,cr-at-eol
+	ignorecase = false
+[diff]
+	renames = copy
+[pack]
+	threads = 0
